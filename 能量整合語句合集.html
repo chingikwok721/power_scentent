@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>能量整合語句合集</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FBF7F0;
+    --parchment: #F5EDE0;
+    --warm-white: #FEFCF8;
+    --ink: #2A2118;
+    --ink-light: #4A3F30;
+    --muted: #9A8872;
+    --gold: #B8955A;
+    --gold-light: #D4AE78;
+    --gold-dim: rgba(184,149,90,0.12);
+    --gold-glow: rgba(184,149,90,0.25);
+    --sage: #7A9E7E;
+    --rose: #B87E7E;
+    --indigo: #6B7BAE;
+    --violet: #9B8EA8;
+    --teal: #6B9E9E;
+    --border: rgba(184,149,90,0.2);
+    --border-strong: rgba(184,149,90,0.4);
+    --shadow: 0 4px 24px rgba(42,33,24,0.08);
+    --shadow-lg: 0 12px 48px rgba(42,33,24,0.14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* Grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    text-align: center;
+    padding: 5rem 2rem 4rem;
+    background: linear-gradient(180deg, var(--parchment) 0%, var(--cream) 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .hero::before {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(184,149,90,0.08) 0%, transparent 70%);
+    top: -100px; left: -100px;
+  }
+  .hero::after {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(122,158,126,0.07) 0%, transparent 70%);
+    bottom: -50px; right: -50px;
+  }
+  .hero-ornament {
+    font-size: 1rem;
+    letter-spacing: 1rem;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 12px var(--gold-glow);
+  }
+  .hero-subtitle {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.3em;
+    margin-bottom: 2rem;
+  }
+  .hero-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto;
+  }
+
+  /* ─── NAV PILLS ─── */
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(251,247,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+  }
+  .nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .nav-pill {
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 0.3rem 0.9rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .nav-pill:hover {
+    background: var(--gold-dim);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ─── MAIN ─── */
+  .main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  /* ─── SECTION ─── */
+  .section {
+    margin-bottom: 4rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .section-en {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── ENERGY CARD (expandable) ─── */
+  .energy-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    cursor: pointer;
+  }
+  .energy-card:hover {
+    box-shadow: var(--shadow);
+    border-color: var(--border-strong);
+  }
+  .energy-card.expanded {
+    border-color: var(--accent, var(--gold));
+    box-shadow: var(--shadow-lg), 0 0 0 3px var(--accent-dim, var(--gold-dim));
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+  }
+  .card-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent, var(--gold));
+    margin-top: 0.6rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px var(--accent, var(--gold));
+    transition: transform 0.3s;
+  }
+  .energy-card.expanded .card-dot {
+    transform: scale(1.5);
+  }
+  .card-preview-text {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    line-height: 1.9;
+    flex: 1;
+  }
+  .card-expand-icon {
+    font-size: 0.8rem;
+    color: var(--muted);
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+    transition: transform 0.3s;
+    opacity: 0.6;
+  }
+  .energy-card.expanded .card-expand-icon {
+    transform: rotate(180deg);
+    opacity: 1;
+    color: var(--accent, var(--gold));
+  }
+
+  /* Expanded content */
+  .card-full {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .energy-card.expanded .card-full {
+    max-height: 600px;
+  }
+  .card-full-inner {
+    padding: 0 1.4rem 1.6rem 3rem;
+    border-top: 1px dashed var(--border);
+    padding-top: 1.2rem;
+  }
+
+  /* ─── HIGHLIGHT QUOTE (the "抽起能量句") ─── */
+  .highlight-quote {
+    position: relative;
+    background: linear-gradient(135deg, var(--accent-bg, rgba(184,149,90,0.06)) 0%, transparent 100%);
+    border-left: 3px solid var(--accent, var(--gold));
+    border-radius: 0 12px 12px 0;
+    padding: 1.2rem 1.5rem 1.2rem 1.8rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .highlight-quote:hover {
+    background: linear-gradient(135deg, var(--accent-bg-hover, rgba(184,149,90,0.1)) 0%, transparent 100%);
+    transform: translateX(4px);
+  }
+  .highlight-quote .quote-line {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 2;
+    display: block;
+  }
+  .quote-hint {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── FULLSCREEN QUOTE OVERLAY ─── */
+  .quote-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(42,33,24,0.82);
+    backdrop-filter: blur(16px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+  .quote-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .quote-fullscreen {
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    animation: quoteIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  @keyframes quoteIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .quote-deco-top, .quote-deco-bottom {
+    font-size: 3rem;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-family: Georgia, serif;
+  }
+  .quote-deco-bottom { margin-top: 1rem; transform: rotate(180deg); display: inline-block; }
+  .quote-big-text {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    color: #FBF7F0;
+    line-height: 2;
+    letter-spacing: 0.08em;
+  }
+  .quote-section-label {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    letter-spacing: 0.3em;
+    margin-top: 1.5rem;
+    opacity: 0.7;
+  }
+  .close-overlay {
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    background: transparent;
+    border: 1px solid rgba(251,247,240,0.2);
+    border-radius: 8px;
+    width: 32px; height: 32px;
+    color: rgba(251,247,240,0.6);
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .close-overlay:hover { background: rgba(251,247,240,0.1); color: #FBF7F0; }
+  .overlay-hint {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(251,247,240,0.3);
+    margin-top: 2rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* ─── NUMBERED LIST SECTION (40句) ─── */
+  .affirmation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 0.75rem;
+  }
+  .affirmation-item {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.9rem 1rem;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .affirmation-item:hover {
+    border-color: var(--accent, var(--gold));
+    background: var(--gold-dim);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  .affirmation-num {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-weight: 500;
+    min-width: 28px;
+    padding-top: 0.15rem;
+    opacity: 0.7;
+  }
+  .affirmation-text {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 1.85;
+    flex: 1;
+  }
+
+  /* ─── CATEGORY LABEL ─── */
+  .cat-label {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    color: var(--accent, var(--gold));
+    margin: 1.4rem 0 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .cat-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── POEM / LETTER SECTION ─── */
+  .poem-block {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .poem-block::before {
+    content: '❝';
+    position: absolute;
+    top: 1rem; left: 1.2rem;
+    font-size: 2rem;
+    color: var(--gold);
+    opacity: 0.15;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .poem-line {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    line-height: 2.2;
+    display: block;
+  }
+
+  /* ─── HOOVER KO 按鈕 ─── */
+  .section-divider {
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--gold);
+    letter-spacing: 0.8rem;
+    opacity: 0.3;
+    font-size: 0.8rem;
+  }
+
+  /* ─── WORKPLACE SECTION ─── */
+  .workplace-sub {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin: 1rem 0 0.4rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .workplace-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--gold-dim);
+    border: 1px solid var(--border-strong);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  /* ─── SCROLL INDICATOR ─── */
+  .scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 42px; height: 42px;
+    background: var(--gold);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(184,149,90,0.4);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+  }
+  .scroll-top.visible { opacity: 1; pointer-events: all; }
+  .scroll-top:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(184,149,90,0.5); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 600px) {
+    .affirmation-grid { grid-template-columns: 1fr; }
+    .main { padding: 2rem 1rem 5rem; }
+    .hero { padding: 3.5rem 1.2rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Fullscreen quote overlay -->
+<div class="quote-overlay" id="quoteOverlay" onclick="closeOverlay()">
+  <div class="quote-fullscreen" onclick="event.stopPropagation()">
+    <button class="close-overlay" onclick="closeOverlay()">✕</button>
+    <div class="quote-deco-top">"</div>
+    <div class="quote-big-text" id="overlayText"></div>
+    <div class="quote-deco-bottom">"</div>
+    <div class="quote-section-label" id="overlayLabel"></div>
+    <div class="overlay-hint">點擊任意處關閉 · 按住靜心細讀</div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-ornament">✦ · · · ✦</div>
+  <h1>能量整合語句合集</h1>
+  <div class="hero-subtitle">根據你靈魂旅程而生 · by IvyChingi</div>
+  <div class="hero-divider"></div>
+</div>
+
+<!-- Nav -->
+<div class="nav-wrap">
+  <div class="nav-pills">
+    <a class="nav-pill" href="#grounding">🍃 地基穩定</a>
+    <a class="nav-pill" href="#release">🌀 清理釋放</a>
+    <a class="nav-pill" href="#emotion">💗 情緒擁抱</a>
+    <a class="nav-pill" href="#manifest">🔮 願望顯化</a>
+    <a class="nav-pill" href="#voice">🎤 語言表達</a>
+    <a class="nav-pill" href="#family">💞 原生整合</a>
+    <a class="nav-pill" href="#soul">🌈 靈性進階</a>
+    <a class="nav-pill" href="#declaration">✍️ 靈魂宣言</a>
+    <a class="nav-pill" href="#forty">📇 40句語錄</a>
+    <a class="nav-pill" href="#workplace">💼 職場療癒</a>
+    <a class="nav-pill" href="#daily">🕯️ 每日咒語</a>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ── 地基穩定 ── -->
+  <div class="section" id="grounding">
+    <div class="section-header">
+      <div class="section-icon">🍃</div>
+      <div>
+        <div class="section-title">地基穩定</div>
+        <div class="section-en">Grounding &amp; 安全感</div>
+      </div>
+    </div>
+
+    <div class="energy-card" style="--accent:#7A9E7E;--accent-dim:rgba(122,158,126,0.12);--accent-bg:rgba(122,158,126,0.06);--accent-bg-hover:rgba(122,158,126,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">我以腳底連接大地，感知穩固之源流動於我體內。</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" style="--accent:#7A9E7E;--accent-bg:rgba(122,158,126,0.07);--accent-bg-hover:rgba(122,158,126,0.12)" onclick="openQuote('我以腳底連接大地，感知穩固之源流動於我體內。', '地基穩定 · Grounding'); event.stopPropagation()">
+            <span class="quote-line">我以腳底連接大地，感知穩固之源流動於我體內。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#7A9E7E;--accent-bg:rgba(122,158,126,0.07);--accent-bg-hover:rgba(122,158,126,0.12)" onclick="openQuote('我唔再等待外在保護，我而家喺自己裡面搵到穩陣。', '地基穩定 · Grounding'); event.stopPropagation()">
+            <span class="quote-line">我唔再等待外在保護，我而家喺自己裡面搵到穩陣。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#7A9E7E;--accent-bg:rgba(122,158,126,0.07);--accent-bg-hover:rgba(122,158,126,0.12)" onclick="openQuote('我擁有屬於自己嘅節奏，我唔需要快得嚟證明我夠好。', '地基穩定 · Grounding'); event.stopPropagation()">
+            <span class="quote-line">我擁有屬於自己嘅節奏，我唔需要快得嚟證明我夠好。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <p style="font-family:'Noto Sans TC',sans-serif;font-size:0.78rem;color:var(--muted);margin-top:0.8rem;font-style:italic;">I connect to the earth through the soles of my feet, and feel its grounding current flow through me.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 清理釋放 ── -->
+  <div class="section" id="release">
+    <div class="section-header">
+      <div class="section-icon">🌀</div>
+      <div>
+        <div class="section-title">清理與釋放</div>
+        <div class="section-en">Emotional Release &amp; Inner Flow</div>
+      </div>
+    </div>
+
+    <div class="energy-card" style="--accent:#6B8CAE;--accent-dim:rgba(107,140,174,0.12);--accent-bg:rgba(107,140,174,0.06);--accent-bg-hover:rgba(107,140,174,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">我允許舊能量如風般離去，不再固執保存不屬於我的重量。</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" style="--accent:#6B8CAE;--accent-bg:rgba(107,140,174,0.07);--accent-bg-hover:rgba(107,140,174,0.12)" onclick="openQuote('我允許舊能量如風般離去，不再固執保存不屬於我的重量。', '清理與釋放 · Release'); event.stopPropagation()">
+            <span class="quote-line">我允許舊能量如風般離去，不再固執保存不屬於我的重量。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#6B8CAE;--accent-bg:rgba(107,140,174,0.07);--accent-bg-hover:rgba(107,140,174,0.12)" onclick="openQuote('我唔再為自己反應慢而責怪，因為我一直都用靈魂速度行緊路。', '清理與釋放 · Release'); event.stopPropagation()">
+            <span class="quote-line">我唔再為自己反應慢而責怪，因為我一直都用靈魂速度行緊路。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#6B8CAE;--accent-bg:rgba(107,140,174,0.07);--accent-bg-hover:rgba(107,140,174,0.12)" onclick="openQuote('我敢望住不安，我選擇唔逃避佢，而係聽見佢想講咩。', '清理與釋放 · Release'); event.stopPropagation()">
+            <span class="quote-line">我敢望住不安，我選擇唔逃避佢，而係聽見佢想講咩。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <p style="font-family:'Noto Sans TC',sans-serif;font-size:0.78rem;color:var(--muted);margin-top:0.8rem;font-style:italic;">I allow old energy to leave like wind — I no longer hold weight that isn't mine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 情緒擁抱 ── -->
+  <div class="section" id="emotion">
+    <div class="section-header">
+      <div class="section-icon">💗</div>
+      <div>
+        <div class="section-title">情緒擁抱</div>
+        <div class="section-en">Emotional Embrace &amp; 溫柔覺察</div>
+      </div>
+    </div>
+
+    <div class="energy-card" style="--accent:#B87E7E;--accent-dim:rgba(184,126,126,0.12);--accent-bg:rgba(184,126,126,0.06);--accent-bg-hover:rgba(184,126,126,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">我看見我的悲傷與硬結，它們曾保護我，如今我溫柔攬住它們讓它們化開。</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" style="--accent:#B87E7E;--accent-bg:rgba(184,126,126,0.07);--accent-bg-hover:rgba(184,126,126,0.12)" onclick="openQuote('我看見我的悲傷與硬結，它們曾保護我，如今我溫柔攬住它們讓它們化開。', '情緒擁抱 · Emotional Embrace'); event.stopPropagation()">
+            <span class="quote-line">我看見我的悲傷與硬結，它們曾保護我，如今我溫柔攬住它們讓它們化開。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#B87E7E;--accent-bg:rgba(184,126,126,0.07);--accent-bg-hover:rgba(184,126,126,0.12)" onclick="openQuote('我唔再隱藏靈魂的顫動，因為眼淚係靈感的水。', '情緒擁抱 · Emotional Embrace'); event.stopPropagation()">
+            <span class="quote-line">我唔再隱藏靈魂的顫動，因為眼淚係靈感的水。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#B87E7E;--accent-bg:rgba(184,126,126,0.07);--accent-bg-hover:rgba(184,126,126,0.12)" onclick="openQuote('我而家唔需要完美嘅語言，我只需要真誠嘅聲音。', '情緒擁抱 · Emotional Embrace'); event.stopPropagation()">
+            <span class="quote-line">我而家唔需要完美嘅語言，我只需要真誠嘅聲音。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 願望顯化 ── -->
+  <div class="section" id="manifest">
+    <div class="section-header">
+      <div class="section-icon">🔮</div>
+      <div>
+        <div class="section-title">願望顯化</div>
+        <div class="section-en">Manifestation &amp; 振頻轉化</div>
+      </div>
+    </div>
+
+    <div class="energy-card" style="--accent:#9B8EA8;--accent-dim:rgba(155,142,168,0.12);--accent-bg:rgba(155,142,168,0.06);--accent-bg-hover:rgba(155,142,168,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">我不再等待完美，而是願意在不完整之中接收宇宙的豐盛。</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" style="--accent:#9B8EA8;--accent-bg:rgba(155,142,168,0.07);--accent-bg-hover:rgba(155,142,168,0.12)" onclick="openQuote('我不再等待完美，而是願意在不完整之中接收宇宙的豐盛。', '願望顯化 · Manifestation'); event.stopPropagation()">
+            <span class="quote-line">我不再等待完美，而是願意在不完整之中接收宇宙的豐盛。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#9B8EA8;--accent-bg:rgba(155,142,168,0.07);--accent-bg-hover:rgba(155,142,168,0.12)" onclick="openQuote('我願望已落地，我已準備好灌溉佢。', '願望顯化 · Manifestation'); event.stopPropagation()">
+            <span class="quote-line">我願望已落地，我已準備好灌溉佢。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#9B8EA8;--accent-bg:rgba(155,142,168,0.07);--accent-bg-hover:rgba(155,142,168,0.12)" onclick="openQuote('我以自己真誠的療癒之心，開啟一段與他人連結的旅程。', '願望顯化 · Manifestation'); event.stopPropagation()">
+            <span class="quote-line">我以自己真誠的療癒之心，開啟一段與他人連結的旅程。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <p style="font-family:'Noto Sans TC',sans-serif;font-size:0.78rem;color:var(--muted);margin-top:0.8rem;font-style:italic;">I no longer wait for perfection — I allow abundance in even through my imperfect edges.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 語言表達 ── -->
+  <div class="section" id="voice">
+    <div class="section-header">
+      <div class="section-icon">🎤</div>
+      <div>
+        <div class="section-title">語言穩定與表達自信</div>
+        <div class="section-en">Language &amp; Soul Voice</div>
+      </div>
+    </div>
+    <div class="energy-card" style="--accent:#6B9E9E;--accent-dim:rgba(107,158,158,0.12);--accent-bg:rgba(107,158,158,0.06);--accent-bg-hover:rgba(107,158,158,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">我語言的節奏，係由我的靈魂編排。</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" style="--accent:#6B9E9E;--accent-bg:rgba(107,158,158,0.07);--accent-bg-hover:rgba(107,158,158,0.12)" onclick="openQuote('我語言的節奏，係由我的靈魂編排。', '語言表達 · Soul Voice'); event.stopPropagation()">
+            <span class="quote-line">我語言的節奏，係由我的靈魂編排。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#6B9E9E;--accent-bg:rgba(107,158,158,0.07);--accent-bg-hover:rgba(107,158,158,0.12)" onclick="openQuote('我會用深度與真誠答你，所以我願意慢慢嚟。', '語言表達 · Soul Voice'); event.stopPropagation()">
+            <span class="quote-line">我會用深度與真誠答你，所以我願意慢慢嚟。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#6B9E9E;--accent-bg:rgba(107,158,158,0.07);--accent-bg-hover:rgba(107,158,158,0.12)" onclick="openQuote('我嘅聲音係療癒的管道，我的存在本身就值得發聲。', '語言表達 · Soul Voice'); event.stopPropagation()">
+            <span class="quote-line">我嘅聲音係療癒的管道，我的存在本身就值得發聲。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 原生整合 ── -->
+  <div class="section" id="family">
+    <div class="section-header">
+      <div class="section-icon">💞</div>
+      <div>
+        <div class="section-title">原生整合</div>
+        <div class="section-en">Inner Child &amp; Family Healing</div>
+      </div>
+    </div>
+    <div class="energy-card" style="--accent:#B8955A;--accent-dim:rgba(184,149,90,0.12);--accent-bg:rgba(184,149,90,0.06);--accent-bg-hover:rgba(184,149,90,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">媽媽教我識得堅韌，姐姐讓我明白自由，爸爸令我聽見寂靜裡的訊息。</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" onclick="openQuote('媽媽教我識得堅韌，姐姐讓我明白自由，爸爸令我聽見寂靜裡的訊息。', '原生整合 · Family Healing'); event.stopPropagation()">
+            <span class="quote-line">媽媽教我識得堅韌，姐姐讓我明白自由，爸爸令我聽見寂靜裡的訊息。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" onclick="openQuote('我唔再複製任何人，我願以我自己的節奏，重新定義愛與表達。', '原生整合 · Family Healing'); event.stopPropagation()">
+            <span class="quote-line">我唔再複製任何人，我願以我自己的節奏，重新定義愛與表達。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" onclick="openQuote('我不再逃避過去，我用愛去整合佢，我細個嘅我值得被擁抱。', '原生整合 · Family Healing'); event.stopPropagation()">
+            <span class="quote-line">我不再逃避過去，我用愛去整合佢，我細個嘅我值得被擁抱。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 靈性進階 ── -->
+  <div class="section" id="soul">
+    <div class="section-header">
+      <div class="section-icon">🌈</div>
+      <div>
+        <div class="section-title">靈性進階與宇宙連結</div>
+        <div class="section-en">Soul Expansion</div>
+      </div>
+    </div>
+    <div class="energy-card" style="--accent:#9B8EA8;--accent-dim:rgba(155,142,168,0.12);--accent-bg:rgba(155,142,168,0.06);--accent-bg-hover:rgba(155,142,168,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">我不再追求光明，我就是光。</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" style="--accent:#9B8EA8;--accent-bg:rgba(155,142,168,0.07);--accent-bg-hover:rgba(155,142,168,0.12)" onclick="openQuote('我不再追求光明，我就是光。', '靈性進階 · Soul Expansion'); event.stopPropagation()">
+            <span class="quote-line">我不再追求光明，我就是光。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#9B8EA8;--accent-bg:rgba(155,142,168,0.07);--accent-bg-hover:rgba(155,142,168,0.12)" onclick="openQuote('我的語言係能量橋樑，我每一句話都在調頻宇宙的聲音。', '靈性進階 · Soul Expansion'); event.stopPropagation()">
+            <span class="quote-line">我的語言係能量橋樑，我每一句話都在調頻宇宙的聲音。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#9B8EA8;--accent-bg:rgba(155,142,168,0.07);--accent-bg-hover:rgba(155,142,168,0.12)" onclick="openQuote('我唔止係學習者，我已經係能量轉化者。', '靈性進階 · Soul Expansion'); event.stopPropagation()">
+            <span class="quote-line">我唔止係學習者，我已經係能量轉化者。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <p style="font-family:'Noto Sans TC',sans-serif;font-size:0.78rem;color:var(--muted);margin-top:0.8rem;font-style:italic;">I no longer chase light. I am light.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 靈魂宣言 ── -->
+  <div class="section" id="declaration">
+    <div class="section-header">
+      <div class="section-icon">✍️</div>
+      <div>
+        <div class="section-title">靈魂宣言級語句</div>
+        <div class="section-en">日常冥想開場 · 工作坊咒語</div>
+      </div>
+    </div>
+
+    <div class="energy-card" style="--accent:#B8955A;--accent-dim:rgba(184,149,90,0.12);--accent-bg:rgba(184,149,90,0.06);--accent-bg-hover:rgba(184,149,90,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">雖然我未夠，但我開始咗。</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" onclick="openQuote('雖然我未夠，但我開始咗。', '靈魂宣言'); event.stopPropagation()">
+            <span class="quote-line">雖然我未夠，但我開始咗。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" onclick="openQuote('願意就已經係一種資格。', '靈魂宣言'); event.stopPropagation()">
+            <span class="quote-line">願意就已經係一種資格。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" onclick="openQuote('我選擇由靈魂深處發聲，而唔係用恐懼回答生命。', '靈魂宣言'); event.stopPropagation()">
+            <span class="quote-line">我選擇由靈魂深處發聲，而唔係用恐懼回答生命。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider">· · · ✦ · · ·</div>
+
+    <!-- 轉化語句 -->
+    <div class="energy-card" style="--accent:#B8955A;--accent-dim:rgba(184,149,90,0.12);--accent-bg:rgba(184,149,90,0.06);--accent-bg-hover:rgba(184,149,90,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">蛻變旅程咒語式總結</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" onclick="openQuote('我選擇喜悅，儘管過去曾流淚；我創造，不再被壓抑和延後；我和諧，並不來自控制，而是擁抱每一個曾被拒絕的自己。我是蛻變本身，我不再追求光明，我就是光。', '蛻變旅程咒語'); event.stopPropagation()">
+            <span class="quote-line">我選擇喜悅，儘管過去曾流淚；</span>
+            <span class="quote-line">我創造，不再被壓抑和延後；</span>
+            <span class="quote-line">我和諧，並不來自控制，而是擁抱每一個曾被拒絕的自己。</span>
+            <span class="quote-line">我是蛻變本身，我不再追求光明，我就是光。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="energy-card" style="--accent:#9B8EA8;--accent-dim:rgba(155,142,168,0.12);--accent-bg:rgba(155,142,168,0.06);--accent-bg-hover:rgba(155,142,168,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">總結性靈性咒語（冥想默念）</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" style="--accent:#9B8EA8;--accent-bg:rgba(155,142,168,0.07);--accent-bg-hover:rgba(155,142,168,0.12)" onclick="openQuote('我承認眼淚是一種智慧，我信任沉默中的靈感，我放下急切，也接住我的等待。我不再向外尋找平衡，因為真正的和諧，一直住在我靈魂深處。', '靈性咒語 · 冥想'); event.stopPropagation()">
+            <span class="quote-line">我承認眼淚是一種智慧，</span>
+            <span class="quote-line">我信任沉默中的靈感，</span>
+            <span class="quote-line">我放下急切，也接住我的等待。</span>
+            <span class="quote-line">我不再向外尋找平衡，</span>
+            <span class="quote-line">因為真正的和諧，一直住在我靈魂深處。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">· · · ✦ · · ·</div>
+
+  <!-- ── 40句語錄 ── -->
+  <div class="section" id="forty">
+    <div class="section-header">
+      <div class="section-icon">📇</div>
+      <div>
+        <div class="section-title">40句完整版靈魂語錄</div>
+        <div class="section-en">Soul Affirmation Collection</div>
+      </div>
+    </div>
+
+    <div class="cat-label">🌿 肯定句 Affirmations · 1–10</div>
+    <div class="affirmation-grid">
+      <div class="affirmation-item" onclick="openQuote('我唔需要一次過見晒全條路，只要搵到下一個燈位就夠。', '肯定句 #1')"><div class="affirmation-num">01</div><div class="affirmation-text">我唔需要一次過見晒全條路，只要搵到下一個燈位就夠。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我值得被聽見，就算我暫時唔出聲。', '肯定句 #2')"><div class="affirmation-num">02</div><div class="affirmation-text">我值得被聽見，就算我暫時唔出聲。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我唔係脆弱，我係柔軟。', '肯定句 #3')"><div class="affirmation-num">03</div><div class="affirmation-text">我唔係脆弱，我係柔軟。</div></div>
+      <div class="affirmation-item" onclick="openQuote('慢慢嚟，都係一種力量。', '肯定句 #4')"><div class="affirmation-num">04</div><div class="affirmation-text">慢慢嚟，都係一種力量。</div></div>
+      <div class="affirmation-item" onclick="openQuote('就算今日好慢，我都依然向前。', '肯定句 #5')"><div class="affirmation-num">05</div><div class="affirmation-text">就算今日好慢，我都依然向前。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我容許自己唔完美，因為真實比完美更重要。', '肯定句 #6')"><div class="affirmation-num">06</div><div class="affirmation-text">我容許自己唔完美，因為真實比完美更重要。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我嘅價值唔取決於他人的評語。', '肯定句 #7')"><div class="affirmation-num">07</div><div class="affirmation-text">我嘅價值唔取決於他人的評語。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我可以一邊修補自己，一邊行路。', '肯定句 #8')"><div class="affirmation-num">08</div><div class="affirmation-text">我可以一邊修補自己，一邊行路。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我身體的節奏值得被尊重。', '肯定句 #9')"><div class="affirmation-num">09</div><div class="affirmation-text">我身體的節奏值得被尊重。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我係安全嘅，我係穩定嘅，我係被承托嘅。', '肯定句 #10')"><div class="affirmation-num">10</div><div class="affirmation-text">我係安全嘅，我係穩定嘅，我係被承托嘅。</div></div>
+    </div>
+
+    <div class="cat-label">✨ 咒語 Mantras · 11–25</div>
+    <div class="affirmation-grid">
+      <div class="affirmation-item" onclick="openQuote('呼吸入光，呼氣釋放重擔。', '咒語 #11')"><div class="affirmation-num">11</div><div class="affirmation-text">呼吸入光，呼氣釋放重擔。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我收回屬於自己嘅力量，將他人的情緒留返畀佢哋。', '咒語 #12')"><div class="affirmation-num">12</div><div class="affirmation-text">我收回屬於自己嘅力量，將他人的情緒留返畀佢哋。</div></div>
+      <div class="affirmation-item" onclick="openQuote('今日的我，已經比昨天更輕盈。', '咒語 #13')"><div class="affirmation-num">13</div><div class="affirmation-text">今日的我，已經比昨天更輕盈。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我釋放多餘的水分與悶滯，迎接清澈的流動。', '咒語 #14')"><div class="affirmation-num">14</div><div class="affirmation-text">我釋放多餘的水分與悶滯，迎接清澈的流動。</div></div>
+      <div class="affirmation-item" onclick="openQuote('每次呼氣，我都放低一點過去。', '咒語 #15')"><div class="affirmation-num">15</div><div class="affirmation-text">每次呼氣，我都放低一點過去。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我嘅聲音值得被世界接收。', '咒語 #16')"><div class="affirmation-num">16</div><div class="affirmation-text">我嘅聲音值得被世界接收。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我願意比自己多一次機會。', '咒語 #17')"><div class="affirmation-num">17</div><div class="affirmation-text">我願意比自己多一次機會。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我的心如湖面般平靜。', '咒語 #18')"><div class="affirmation-num">18</div><div class="affirmation-text">我的心如湖面般平靜。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我相信宇宙正為我準備最合適的安排。', '咒語 #19')"><div class="affirmation-num">19</div><div class="affirmation-text">我相信宇宙正為我準備最合適的安排。</div></div>
+      <div class="affirmation-item" onclick="openQuote('每次深呼吸，都係一次重啟。', '咒語 #20')"><div class="affirmation-num">20</div><div class="affirmation-text">每次深呼吸，都係一次重啟。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我選擇愛，而唔係恐懼。', '咒語 #21')"><div class="affirmation-num">21</div><div class="affirmation-text">我選擇愛，而唔係恐懼。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我在此刻，已經完整。', '咒語 #22')"><div class="affirmation-num">22</div><div class="affirmation-text">我在此刻，已經完整。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我的存在已經是禮物。', '咒語 #23')"><div class="affirmation-num">23</div><div class="affirmation-text">我的存在已經是禮物。</div></div>
+      <div class="affirmation-item" onclick="openQuote('每一次放慢，都係對靈魂的尊重。', '咒語 #24')"><div class="affirmation-num">24</div><div class="affirmation-text">每一次放慢，都係對靈魂的尊重。</div></div>
+      <div class="affirmation-item" onclick="openQuote('我能穩穩站在自己的位置上。', '咒語 #25')"><div class="affirmation-num">25</div><div class="affirmation-text">我能穩穩站在自己的位置上。</div></div>
+    </div>
+
+    <div class="cat-label">💎 金句 Quotes · 26–40</div>
+    <div class="affirmation-grid">
+      <div class="affirmation-item" onclick="openQuote('錯路，只係成長地圖嘅秘密通道。', '金句 #26')"><div class="affirmation-num">26</div><div class="affirmation-text">錯路，只係成長地圖嘅秘密通道。</div></div>
+      <div class="affirmation-item" onclick="openQuote('靈魂裏的某啲部分，從來唔需要創造，只需要承認。', '金句 #27')"><div class="affirmation-num">27</div><div class="affirmation-text">靈魂裏的某啲部分，從來唔需要創造，只需要承認。</div></div>
+      <div class="affirmation-item" onclick="openQuote('就算唔出聲，宇宙都聽到我。', '金句 #28')"><div class="affirmation-num">28</div><div class="affirmation-text">就算唔出聲，宇宙都聽到我。</div></div>
+      <div class="affirmation-item" onclick="openQuote('你唔需要痊癒先值得被愛。', '金句 #29')"><div class="affirmation-num">29</div><div class="affirmation-text">你唔需要痊癒先值得被愛。</div></div>
+      <div class="affirmation-item" onclick="openQuote('柔軟唔係弱，係另一種力量。', '金句 #30')"><div class="affirmation-num">30</div><div class="affirmation-text">柔軟唔係弱，係另一種力量。</div></div>
+      <div class="affirmation-item" onclick="openQuote('每段故事，都有佢嚟到的原因。', '金句 #31')"><div class="affirmation-num">31</div><div class="affirmation-text">每段故事，都有佢嚟到的原因。</div></div>
+      <div class="affirmation-item" onclick="openQuote('季節會轉，情緒都會。', '金句 #32')"><div class="affirmation-num">32</div><div class="affirmation-text">季節會轉，情緒都會。</div></div>
+      <div class="affirmation-item" onclick="openQuote('風景唔止喺目的地，仲喺每一段呼吸之間。', '金句 #33')"><div class="affirmation-num">33</div><div class="affirmation-text">風景唔止喺目的地，仲喺每一段呼吸之間。</div></div>
+      <div class="affirmation-item" onclick="openQuote('當你準備好，門會自己打開。', '金句 #34')"><div class="affirmation-num">34</div><div class="affirmation-text">當你準備好，門會自己打開。</div></div>
+      <div class="affirmation-item" onclick="openQuote('界線係愛自己的一種方式。', '金句 #35')"><div class="affirmation-num">35</div><div class="affirmation-text">界線係愛自己的一種方式。</div></div>
+      <div class="affirmation-item" onclick="openQuote('唔急住醒，因為覺察本身都係旅程。', '金句 #36')"><div class="affirmation-num">36</div><div class="affirmation-text">唔急住醒，因為覺察本身都係旅程。</div></div>
+      <div class="affirmation-item" onclick="openQuote('有啲花要夜晚先會開。', '金句 #37')"><div class="affirmation-num">37</div><div class="affirmation-text">有啲花要夜晚先會開。</div></div>
+      <div class="affirmation-item" onclick="openQuote('每一次重逢自己，都係奇蹟。', '金句 #38')"><div class="affirmation-num">38</div><div class="affirmation-text">每一次重逢自己，都係奇蹟。</div></div>
+      <div class="affirmation-item" onclick="openQuote('你唔係落後，你係用靈魂嘅時間表生活。', '金句 #39')"><div class="affirmation-num">39</div><div class="affirmation-text">你唔係落後，你係用靈魂嘅時間表生活。</div></div>
+      <div class="affirmation-item" onclick="openQuote('真正嘅安全感，係由內而生。', '金句 #40')"><div class="affirmation-num">40</div><div class="affirmation-text">真正嘅安全感，係由內而生。</div></div>
+    </div>
+  </div>
+
+  <div class="section-divider">· · · ✦ · · ·</div>
+
+  <!-- ── 職場療癒 ── -->
+  <div class="section" id="workplace">
+    <div class="section-header">
+      <div class="section-icon">💼</div>
+      <div>
+        <div class="section-title">職場療癒語句</div>
+        <div class="section-en">Workplace Healing &amp; Boundaries</div>
+      </div>
+    </div>
+
+    <div class="energy-card" style="--accent:#6B8CAE;--accent-dim:rgba(107,140,174,0.12);--accent-bg:rgba(107,140,174,0.06);--accent-bg-hover:rgba(107,140,174,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">職場凌霸事件 · 靈魂自我修復</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="workplace-sub"><div class="workplace-num">①</div>關於語氣界線</div>
+          <div class="highlight-quote" style="--accent:#6B8CAE;--accent-bg:rgba(107,140,174,0.07);--accent-bg-hover:rgba(107,140,174,0.12)" onclick="openQuote('我唔係唔識講嘢，我係唔接受被語氣貶低。', '職場語氣界線'); event.stopPropagation()">
+            <span class="quote-line">我唔係唔識講嘢，我係唔接受被語氣貶低。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+          <div class="highlight-quote" style="--accent:#6B8CAE;--accent-bg:rgba(107,140,174,0.07);--accent-bg-hover:rgba(107,140,174,0.12)" onclick="openQuote('我唔係做錯，我只係拒絕接受唔合理的指責方式。', '職場語氣界線'); event.stopPropagation()">
+            <span class="quote-line">我唔係做錯，我只係拒絕接受唔合理的指責方式。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+
+          <div class="workplace-sub"><div class="workplace-num">④</div>關於自我情緒修復</div>
+          <div class="highlight-quote" style="--accent:#6B8CAE;--accent-bg:rgba(107,140,174,0.07);--accent-bg-hover:rgba(107,140,174,0.12)" onclick="openQuote('佢用情緒語氣唔代表我值得咁樣被對待。', '職場情緒修復'); event.stopPropagation()">
+            <span class="quote-line">佢用情緒語氣唔代表我值得咁樣被對待。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+
+          <div class="workplace-sub"><div class="workplace-num">⑤</div>關於靈魂姿態重建</div>
+          <div class="highlight-quote" style="--accent:#6B8CAE;--accent-bg:rgba(107,140,174,0.07);--accent-bg-hover:rgba(107,140,174,0.12)" onclick="openQuote('我已經有能力識分：咩係合作，咩係凌霸。而我選擇唔再沉默。', '靈魂姿態重建'); event.stopPropagation()">
+            <span class="quote-line">我已經有能力識分：咩係合作，咩係凌霸。而我選擇唔再沉默。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="energy-card" style="--accent:#7A9E7E;--accent-dim:rgba(122,158,126,0.12);--accent-bg:rgba(122,158,126,0.06);--accent-bg-hover:rgba(122,158,126,0.1)" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-dot"></div>
+        <div class="card-preview-text">靈魂職場宣言</div>
+        <div class="card-expand-icon">▼</div>
+      </div>
+      <div class="card-full">
+        <div class="card-full-inner">
+          <div class="highlight-quote" style="--accent:#7A9E7E;--accent-bg:rgba(122,158,126,0.07);--accent-bg-hover:rgba(122,158,126,0.12)" onclick="openQuote('我職場從來唔係就咁打工，而係一場靈魂的辨識旅程。我唔再尋求讚賞換價值，我而家知道自己有創作源頭。我每一次工作轉向，都係一次意識重置。我唔再迷失，我而家正喺設計我靈魂角色。', '靈魂職場宣言'); event.stopPropagation()">
+            <span class="quote-line">我職場從來唔係就咁打工，而係一場靈魂的辨識旅程。</span>
+            <span class="quote-line">我唔再尋求讚賞換價值，我而家知道自己有創作源頭。</span>
+            <span class="quote-line">我每一次工作轉向，都係一次意識重置。</span>
+            <span class="quote-line">我唔再迷失，我而家正喺設計我靈魂角色。</span>
+            <div class="quote-hint">點擊放大 · Click to expand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 每日咒語 ── -->
+  <div class="section" id="daily">
+    <div class="section-header">
+      <div class="section-icon">🕯️</div>
+      <div>
+        <div class="section-title">每日咒語 · 靈魂提示</div>
+        <div class="section-en">Daily Mantras &amp; Soul Reminders</div>
+      </div>
+    </div>
+
+    <div class="poem-block">
+      <span class="poem-line">我唔再為未完成而懷疑自己，</span>
+      <span class="poem-line">我而家行緊既正係靈魂旅程嘅正中心。</span>
+      <span class="poem-line">我願意活出不完美中的療癒之光。</span>
+    </div>
+
+    <div class="poem-block">
+      <span class="poem-line">我唔需要一次過見到全條路，</span>
+      <span class="poem-line">我只需要搵到下一個燈位。</span>
+      <span class="poem-line" style="margin-top:0.5rem;"></span>
+      <span class="poem-line">我唔需要為全世界上場，</span>
+      <span class="poem-line">我只需要為自己行一步。</span>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+      <div class="highlight-quote" onclick="openQuote('我容許自己慢慢打開，就算心同身體仲有壓住嘅重量，我依然值得被理解、被擁抱。探索自己唔需要急，我一步一步行，已經係愛自己最真實嘅方式。', '溫柔收尾語句')">
+        <span class="quote-line">我容許自己慢慢打開，</span>
+        <span class="quote-line">就算心同身體仲有壓住嘅重量，</span>
+        <span class="quote-line">我依然值得被理解、被擁抱。</span>
+        <span class="quote-line">探索自己唔需要急，</span>
+        <span class="quote-line">我一步一步行，已經係愛自己最真實嘅方式。</span>
+        <div class="quote-hint">點擊放大 · Click to expand</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<footer>
+  ✦ &nbsp; 能量整合語句合集 · by IvyChingi &nbsp; ✦
+  <br><span style="font-size:0.7rem;margin-top:0.3rem;display:block">點擊任何能量句可放大閱讀 · 願每一句都落地入心</span>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  function toggleCard(card) {
+    const isExpanded = card.classList.contains('expanded');
+    document.querySelectorAll('.energy-card.expanded').forEach(c => c.classList.remove('expanded'));
+    if (!isExpanded) card.classList.add('expanded');
+  }
+
+  function openQuote(text, label) {
+    document.getElementById('overlayText').textContent = text;
+    document.getElementById('overlayLabel').textContent = label || '';
+    document.getElementById('quoteOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeOverlay() {
+    document.getElementById('quoteOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
+
+  // Scroll top button
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Stagger animation on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.animationDelay = (i * 0.08) + 's';
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.section').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
